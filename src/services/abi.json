@@ -1,5 +1,10 @@
 [
   {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
@@ -14,11 +19,6 @@
       {
         "internalType": "address",
         "name": "_tokenB",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_tokenC",
         "type": "address"
       },
       {
@@ -46,11 +46,6 @@
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
-  },
-  {
-    "inputs": [],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
   },
   {
     "inputs": [],

@@ -10,6 +10,7 @@ export const ContextProvider = ({ children }) => {
   const connectMetaMask = async () => {
     await window.ethereum.request({ method: "eth_requestAccounts" }).then((response) => {
       setWallet(response[0]);
+      Services.setWallet(response[0]);
     });
   };
 
@@ -24,6 +25,14 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
-  const values = { connectMetaMask, getPoolData, dataPool, wallet };
+  const createPool = async (_tokenA, _tokenB, _amountA, _amountB, _priceA, _priceB) => {
+    try {
+      await Services.createPool(wallet, _tokenA, _tokenB, _amountA, _amountB, _priceA, _priceB);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const values = { connectMetaMask, getPoolData, createPool, dataPool, wallet };
   return <Context.Provider value={values}>{children}</Context.Provider>;
 };

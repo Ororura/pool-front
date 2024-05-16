@@ -1,6 +1,7 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useContext } from "react";
 import { Context } from "../../../core/Context";
+import { useHistory } from "react-router-dom";
 
 const Header = ({ children }) => {
   const { connectMetaMask } = useContext(Context);
@@ -8,6 +9,7 @@ const Header = ({ children }) => {
     e.preventDefault();
     await connectMetaMask();
   };
+  const nav = useHistory();
 
   return (
     <>
@@ -17,6 +19,14 @@ const Header = ({ children }) => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link onClick={connectHandler}>Авторизоваться</Nav.Link>
+              <Nav.Link
+                onClick={(e) => {
+                  e.preventDefault();
+                  nav.push("/personal");
+                }}
+              >
+                Личный кабинет
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
