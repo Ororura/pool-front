@@ -38,6 +38,38 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
-  const values = { connectMetaMask, getPoolData, createPool, unLogin, dataPool, wallet };
+  const swapTokens = async (amountIn, path, _revertExchange) => {
+    try {
+      await Services.swapTokens(amountIn, path, _revertExchange);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const stake = async (amount) => {
+    try {
+      await Services.stake(amount);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const withdraw = async (amount) => {
+    try {
+      await Services.withdraw(amount);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const claimReward = async () => {
+    try {
+      await Services.claimReward();
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const values = { connectMetaMask, getPoolData, createPool, swapTokens, unLogin, stake, withdraw, dataPool, wallet };
   return <Context.Provider value={values}>{children}</Context.Provider>;
 };
