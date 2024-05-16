@@ -14,6 +14,11 @@ export const ContextProvider = ({ children }) => {
     });
   };
 
+  const unLogin = () => {
+    setWallet("");
+    Services.setWallet("");
+  };
+
   const getPoolData = async () => {
     try {
       const data = await Services.getPools();
@@ -33,6 +38,6 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
-  const values = { connectMetaMask, getPoolData, createPool, dataPool, wallet };
+  const values = { connectMetaMask, getPoolData, createPool, unLogin, dataPool, wallet };
   return <Context.Provider value={values}>{children}</Context.Provider>;
 };
