@@ -1,11 +1,11 @@
 [
   {
-    "inputs": [],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
     "inputs": [
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      },
       {
         "internalType": "address",
         "name": "_tokenA",
@@ -40,17 +40,17 @@
         "internalType": "uint256",
         "name": "_priceB",
         "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "_owner",
-        "type": "address"
       }
     ],
     "name": "createPool",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
+  },
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
     "inputs": [],
@@ -67,12 +67,65 @@
   },
   {
     "inputs": [],
+    "name": "getPoolData",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "tokenA",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "tokenB",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalTokensPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "tokenRatios",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "absolueValues",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct Factory.PoolData[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "getPools",
     "outputs": [
       {
         "internalType": "contract Pool[]",
         "name": "",
         "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getPriceToken",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",

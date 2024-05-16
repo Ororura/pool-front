@@ -11,7 +11,7 @@ const Header = ({ children }) => {
 
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" style={{ backgroundColor: "#b067b5" }}>
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

@@ -3,12 +3,12 @@ import abi from "./abi.json";
 
 class Services {
   web3 = new Web3(window.ethereum);
-  contractAddress = "0xBB92b9b5Fa4AD36B80aD4933dD566C2A137ee9AC";
+  contractAddress = "0x0D7B77145b6C5258D0CD7F788BB903dAF5189DDA";
   contract = new this.web3.eth.Contract(abi, this.contractAddress);
 
   async getPools() {
     try {
-      return await this.contract.methods.getPools().call();
+      return await this.contract.methods.getPoolData().call();
     } catch (e) {
       console.log(e);
     }

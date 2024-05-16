@@ -1,13 +1,10 @@
-import Services from "../../../services/Services";
+import { PoolInfo } from "../../components/poolInfo/PoolInfo";
 
 const Main = () => {
-  const handlerGetPools = async () => {
-    const data = await Services.getPools();
-    console.log(data);
-  };
   return (
     <div>
-      <div onClick={handlerGetPools}>GetPools</div>
+      <h1 style={{ textAlign: "center" }}>Главная страница</h1>
+      <PoolInfo></PoolInfo>
     </div>
   );
 };
